@@ -1,0 +1,23 @@
+--------------------------------------------------------------------------------
+Basic Info (Movie):                               (copy into appropriate fields)
+--------------------------------------------------------------------------------
+Title: {{.Title}}
+Image: {{.Info.Image}}
+Year: {{.Info.IMDB.Year}}
+Source: {{.Info.Mediainfo.GeneralSection.Source}}
+Container: {{.Info.Mediainfo.GeneralSection.Container}}
+Video Codec: {{.Info.Mediainfo.VideoStream.Format}}
+Audio Codec: {{.Info.Mediainfo.AudioStream.Format}}
+Resolution: {{.Info.Mediainfo.VideoStream.Resolution}}
+Screenshots:
+{{range .Info.Screenshots}}{{.}}
+{{end}}
+--------------------------------------------------------------------------------
+Description:                                       (copy into description field)
+--------------------------------------------------------------------------------
+{{.Description}}
+--------------------------------------------------------------------------------
+Mediainfo:                                           (copy into mediainfo field)
+--------------------------------------------------------------------------------
+{{.Info.Mediainfo.Raw}}
+--------------------------------------------------------------------------------

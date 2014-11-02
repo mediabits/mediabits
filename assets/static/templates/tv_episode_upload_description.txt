@@ -1,0 +1,19 @@
+[b]Series Description[/b]
+[quote]{{.Show.Description}}[/quote]
+[b]Episode Description[/b]
+[quote][spoiler]{{.Episode.Description}}[/spoiler][/quote]
+[b]Information[/b]
+[quote]IMDB URL: http://www.imdb.com/title/{{.Show.IMDBID}}
+TVDB URL: http://thetvdb.com/?tab=series&id={{.Show.ID}}
+Title: {{.Episode.Name}}
+Series: {{.Show.Name}}
+Aired: {{.Episode.FirstAired}}
+Rating: {{.Episode.Rating}}/10
+Director: {{.Episode.Director}}
+Writer(s): {{.Episode.Writers}}
+[/quote]
+Screenshots:
+[quote][align=center]{{range .Screenshots}}[img={{.}}]{{end}}[/align][/quote]
+[mediainfo]
+{{.Mediainfo.Raw}}
+[/mediainfo]

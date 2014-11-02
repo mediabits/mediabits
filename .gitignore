@@ -1,0 +1,7 @@
+# Generated Files
+/assets/assets.go
+
+# Binaries
+/build/
+/target/
+/mediabits

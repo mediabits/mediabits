@@ -1,0 +1,14 @@
+[b]Description[/b]
+[quote]{{.IMDB.Description}}[/quote]
+[b]Information[/b]
+[quote]IMDB URL: http://www.imdb.com/title/{{.IMDB.ID}}
+Title: {{.IMDB.Title}}
+Year: {{.IMDB.Year}}
+Released: {{.IMDB.Released}}
+MPAA: {{.IMDB.Rated}}
+Rating: {{.IMDB.Rating}}/10
+Runtime: {{.IMDB.Runtime}}
+Director: {{.IMDB.Director}}
+Writer(s): {{.IMDB.Writers}}
+Actor(s): {{.IMDB.Actors}}
+[/quote]

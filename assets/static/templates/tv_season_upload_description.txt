@@ -1,0 +1,18 @@
+[b]Series Description[/b]
+[quote]{{.Show.Description}}[/quote]
+[b]Information[/b]
+[quote]IMDB URL: http://www.imdb.com/title/{{.Show.IMDBID}}
+TVDB URL: http://thetvdb.com/?tab=series&id={{.Show.ID}}
+Series: {{.Show.Name}}
+First Aired: {{.Show.FirstAired}}
+Network: {{.Show.Network}}
+Episodes:
+[list]{{range .Episodes}}
+[*] {{.Name}} (S{{.SeasonNumber}}E{{.EpisodeNumber}}){{end}}
+[/list]
+[/quote]
+Screenshots:
+[quote][align=center]{{range .Screenshots}}[img={{.}}]{{end}}[/align][/quote]
+[mediainfo]
+{{.Mediainfo.Raw}}
+[/mediainfo]

@@ -1,0 +1,15 @@
+{
+	"ArtifactsDest": "./build",
+	"PackageVersion": "0.3.3",
+	"Tasks": [
+		"xc"
+	],
+	"BuildConstraints": "linux windows darwin,amd64",
+	"TaskSettings": {
+		"xc": {
+			"GOARM": "6"
+		}
+	},
+	"ConfigVersion": "0.9",
+	"OutPath": "{{.Dest}}{{.PS}}{{.ExeName}}{{.PS}}{{.Os}}_{{.Arch}}{{.PS}}{{.Version}}{{.PS}}{{.ExeName}}"
+}

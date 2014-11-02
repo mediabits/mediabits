@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mediabits</title>
+  </head>
+
+  <body>
+    <noscript>
+    <span style="font-weight:bolder;font-size:20px;color:red;">No downloads listed? Enable JavaScript.</span>
+    </noscript>
+    <div id="downloads">
+    </div>
+    <script type="text/javascript">
+      var h = new XMLHttpRequest();
+      h.onreadystatechange = function() {
+        if (h.readyState == 4 && h.status == 200) {
+          var downloads = JSON.parse(h.responseText);
+          var artifacts = downloads.artifacts['mediabits'];
+
+          for (app in downloads.artifacts) {
+            var artifacts = downloads.artifacts[app];
+
+            var title = document.createElement("h3");
+            title.appendChild(document.createTextNode(app));
+            var downloads = document.createElement("ul");
+
+            for (platform in artifacts) {
+              var item = document.createElement("li");
+              var link = document.createElement("a");
+              link.href = artifacts[platform]['url'];
+              var human_platform = platform.
+                replace('linux_', 'Linux ').
+                replace('darwin_', 'Mac ').
+                replace('windows_', 'Windows ').
+                replace('386', '32-bit').
+                replace('amd64', '64-bit').
+                replace('arm', 'ARMv6 (32-bit)');
+              link.appendChild(document.createTextNode(human_platform + " (" + artifacts[platform]['version'] + ")"));
+              item.appendChild(link);
+              downloads.appendChild(item);
+            }
+
+            document.getElementById("downloads").appendChild(title);
+            document.getElementById("downloads").appendChild(downloads);
+          }
+        }
+      }
+      h.open("GET","updates/updater.json",true);
+      h.send();
+    </script>
+  </body>
+</html>
